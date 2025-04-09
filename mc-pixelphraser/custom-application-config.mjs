@@ -2,15 +2,15 @@ import { PERMISSIONS, entryPointUriPath } from './src/constants';
 
 const config = {
   name: 'PixelPhraser',
-  entryPointUriPath,
-  cloudIdentifier: 'gcp-eu',
+  entryPointUriPath: '${env:ENTRY_POINT_URI_PATH}',
+  cloudIdentifier: '${env:CLOUD_IDENTIFIER}',
   env: {
     development: {
-      initialProjectKey: "${env:PROJECT_ID}"
+      initialProjectKey: 'pixel-phraser-demo',
     },
     production: {
-      applicationId: "${env:APPLICATION_ID}",
-      url: "https://pixelphraser.vercel.app",
+      applicationId: '${env:CUSTOM_APPLICATION_ID}',
+      url: '${env:APPLICATION_URL}',
     },
   },
   oAuthScopes: {
